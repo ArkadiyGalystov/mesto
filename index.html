@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Путешествие по настоящей стране - Россия">
+  <link rel="shortcut icon" href="images/avatar.png" type="image/x-icon">
+
+  <title>Mesto Russia</title>
+
+  <link rel="stylesheet" href="pages/index.css">
+
+</head>
+
+<body class="body">
+
+  <div class="page">
+
+    <header class="header">
+      <img class="header__logo" src="images/logo.svg" alt="Логотип">
+    </header>
+
+    <main class="main">
+
+      <section class="profile">
+        <div class="profile__block">
+          <img class="profile__avatar" src="images/avatar.png" alt="Жак-Ив Кусто">
+        
+          <div class="profile__info">
+            <div class="profile__info-name">
+            <h2 class="profile__title">Жак-Ив Кусто</h2>
+            <button class="profile__edit" type="button"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__add" type="button"></button>
+
+      </section>
+
+      <section class="gallery">
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/dombai.png" alt="Домбай">
+          <h2 class="gallery__item-title">Домбай</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/karachevsk.png" alt="Карачаевск">
+          <h2 class="gallery__item-title">Карачаевск</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/elbrus.png" alt="Гора Эльбрус">
+          <h2 class="gallery__item-title">Гора Эльбрус</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/karachevsk.png" alt="Карачаево-Черкеск">
+          <h2 class="gallery__item-title">Карачаево-Ч...</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/elbrus.png" alt="Гора Эльбрус">
+          <h2 class="gallery__item-title">Гора Эльбрус</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+        <div class="gallery__item">
+          <img class="gallery__item-image" src="images/dombai.png" alt="Домбай">
+          <h2 class="gallery__item-title">Домбай</h2>
+          <div class="gallery__item-like gallery__item-like_active"></div>
+        </div>
+
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">&copy; 2023 Mesto Russia</p>
+    </footer>
+
+    <div class="popup">
+
+      <div class="popup__container">
+        <div close class="popup__close"></div>
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form action="/">
+          <div class="popup__form">
+            <input class="popup__input-name" type="text" placeholder="Жак-ив Кусто">
+            <input class="popup__input-about" type="text" placeholder="Исследователь океана">
+            <button class="popup__input-button" type="button">Сохранить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script/index.js"></script>
+</body>
+
+</html>
