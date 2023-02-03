@@ -1,0 +1,10 @@
+.gallery__item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 282px;
+  background: #FFFFFF;
+  border-radius: 10px;
+}
