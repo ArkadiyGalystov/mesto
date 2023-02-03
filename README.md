@@ -7,3 +7,4 @@
 **3. Используются технологии:** html, css, flexbox, БЭМ, JavaScript, DOM.
 
 ### Ссылка на проект
+https://arkadiygalystov.github.io/mesto/
