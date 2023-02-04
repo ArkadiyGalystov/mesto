@@ -8,8 +8,8 @@ const buttonSave = document.querySelector('.popup__input-button');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 
-const inputName = document.querySelector('.popup__input-name');
-const inputSubname = document.querySelector('.popup__input-about');
+const inputName = document.querySelector('.popup__input_type_name');
+const inputSubname = document.querySelector('.popup__input_type_about');
 
 
 
