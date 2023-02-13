@@ -1,6 +1,7 @@
 .gallery__item-trash {
-  margin-top: -504px;
-  margin-left: 244px;
+  position: absolute;
+  top: 17px;
+  right: 19px;
   width: 18px;
   height: 19px;
   background-image: url('../../../images/trash.svg');
