@@ -1,0 +1,16 @@
+.gallery__item-trash {
+  margin-top: -504px;
+  margin-left: 244px;
+  width: 18px;
+  height: 19px;
+  background-image: url('../../../images/trash.svg');
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.gallery__item-trash:hover {
+  transition: all 0.3s ease;
+  opacity: 0.6;
+}

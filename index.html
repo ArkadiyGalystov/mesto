@@ -27,56 +27,28 @@
       <section class="profile">
         <div class="profile__block">
           <img class="profile__avatar" src="images/avatar.png" alt="Жак-Ив Кусто">
-        
+
           <div class="profile__info">
             <div class="profile__info-name">
-            <h1 class="profile__title">Жак-Ив Кусто</h1>
-            <button class="profile__edit" type="button"></button>
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit" type="button"></button>
             </div>
             <p class="profile__subtitle">Исследователь океана</p>
           </div>
         </div>
-        <button class="profile__add" type="button"></button>
+        <button class="profile__add" type="button" value="add"></button>
 
       </section>
 
       <section class="gallery">
         <ul class="gallery__item">
           <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/dombai.png" alt="Домбай">
+            <img class="gallery__item-image" src="images/dombai.png" alt="">
+            <button class="gallery__item-trash" type="button"></button>
             <h2 class="gallery__item-title">Домбай</h2>
-            <button class="gallery__item-like gallery__item-like_active" type="button"></button>
+            <button class="gallery__item-like" type="button"></button>
           </li>
-  
-          <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/karachevsk.png" alt="Карачаевск">
-            <h2 class="gallery__item-title">Карачаевск</h2>
-            <button class="gallery__item-like gallery__item-like_active" type="button"></button>
-          </li>
-  
-          <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/elbrus.png" alt="Гора Эльбрус">
-            <h2 class="gallery__item-title">Гора Эльбрус</h2>
-            <button class="gallery__item-like gallery__item-like_active" type="button"></button>
-          </li>
-  
-          <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/karachevsk.png" alt="Карачаево-Черкеск">
-            <h2 class="gallery__item-title">Карачаево-Ч...</h2>
-            <button class="gallery__item-like gallery__item-like_active" type="button"></button>
-          </li>
-  
-          <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/elbrus.png" alt="Гора Эльбрус">
-            <h2 class="gallery__item-title">Гора Эльбрус</h2>
-            <button class="gallery__item-like gallery__item-like_active" type="button"></button>
-          </li>
-  
-          <li class="gallery__item-card">
-            <img class="gallery__item-image" src="images/dombai.png" alt="Домбай">
-            <h2 class="gallery__item-title">Домбай</h2>
-            <button class="gallery__item-like gallery__item-like_active"></button>
-          </li>
+          
         </ul>
       </section>
     </main>
@@ -89,20 +61,46 @@
 
       <div class="popup__container">
         <h3 class="popup__title">Редактировать профиль</h3>
-        <button class="popup__close" type="button"></button>
+        <button class="popup__close"></button>
         <form name="profile">
           <div class="popup__form">
             <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Жак-ив Кусто">
-            <input name="about" class="popup__input popup__input_type_about" type="text" placeholder="Исследователь океана">
+            <input name="about" class="popup__input popup__input_type_about" type="text"
+              placeholder="Исследователь океана">
             <button class="popup__input-button" type="submit">Сохранить</button>
           </div>
         </form>
       </div>
     </div>
 
+    <div class="card">
+
+      <div class="card__container">
+        <h3 class="card__title">Новое место</h3>
+        <button class="card__close"></button>
+        <form name="images">
+          <div class="card__form">
+            <input name="name" class="card__input card__input_type_title" type="text" placeholder="Название">
+            <input name="link" class="card__input card__input_type_image" type="url" placeholder="Ссылка на картинку">
+            <button class="card__input-button" type="submit">Создать</button>
+          </div>
+        </form>
+      </div>
+
+      <template class="template">
+        <li class="gallery__item-card">
+          <img class="gallery__item-image" src="" alt="">
+          <button class="gallery__item-trash" type="button"></button>
+          <h2 class="gallery__item-title"></h2>
+          <button class="gallery__item-like" type="button"></button>
+        </li>
+      </template>
+    </div>
+
   </div>
 
   <script src="script/index.js"></script>
+  <script src="script/item.js"></script>
 </body>
 
 </html>
