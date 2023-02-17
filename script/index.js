@@ -43,7 +43,7 @@ const itemCard = ({ name, link }) => {
   const slider = document.querySelector('.slider');
   const sliderClose = document.querySelector('.slider__close');
 
-  const sliderImg = document.querySelector('.slider__image_popup');
+  const sliderImg = document.querySelector('.slider__image-popup');
   const sliderText = document.querySelector('.slider__text');
 
   img.src = link;
