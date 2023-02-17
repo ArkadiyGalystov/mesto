@@ -1,0 +1,26 @@
+.slider__close {
+  position: absolute;
+  background-image: url('../../../images/close-icon.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  width: 32px;
+  height: 32px;
+  right: -42px;
+  top: -42px;
+  cursor: pointer;
+}
+
+.slider__close:hover {
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 580px) {
+  .slider__close {
+    right: 0;
+    width: 20px;
+    height: 20px;
+  }
+}

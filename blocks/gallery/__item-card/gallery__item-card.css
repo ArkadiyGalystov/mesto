@@ -1,0 +1,12 @@
+.gallery__item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 282px;
+  height: 361px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
