@@ -1,0 +1,32 @@
+.popup__input {
+  width: 358px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  border: none;
+  border-bottom: 1px solid rgb(0 0 0 / 20%);
+  padding-bottom: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 45px 0 28px 0;
+}
+
+.popup__input:nth-last-child(2) {
+  margin: 0;
+}
+
+.popup__input::placeholder {
+  color: #000000;
+}
+
+@media screen and (max-width: 580px) {
+  .popup__input {
+    width: 238px;
+  }
+
+  .popup__input:last-child {
+    margin-top: 71px;
+  }
+}
