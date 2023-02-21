@@ -124,9 +124,9 @@ const openCard = document.querySelector('.profile__add');
 const closePopupNewCard = document.querySelector('#close-newcard');
 const createCardForm = newCard.querySelector('.popup__form');
 
-const buttonCreate = document.querySelector('.card__input-button');
-const titleCard = document.querySelector('.card__input_type_title');
-const imageTitle = document.querySelector('.card__input_type_image');
+const buttonCreate = document.querySelector('.popup__input-button');
+const titleCard = document.querySelector('.popup__input_type_title');
+const imageTitle = document.querySelector('.popup__input_type_image');
 
 
 // открытие NewCard
