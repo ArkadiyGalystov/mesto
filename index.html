@@ -56,12 +56,10 @@
       <div class="popup__container">
         <h3 class="popup__title">Редактировать профиль</h3>
         <button class="popup__close" aria-label="Закрыть" id="close-profile"></button>
-        <form name="profile">
-          <div class="popup__form" name="profile-form">
-            <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя">
-            <input name="about" class="popup__input popup__input_type_about" type="text" placeholder="О себе">
-            <button class="popup__input-button" type="submit" aria-label="Сохранить">Сохранить</button>
-          </div>
+        <form class="popup__form" name="profile-form">
+          <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя">
+          <input name="about" class="popup__input popup__input_type_about" type="text" placeholder="О себе">
+          <button class="popup__input-button" type="submit" aria-label="Сохранить">Сохранить</button>
         </form>
       </div>
     </div>
@@ -71,35 +69,33 @@
       <div class="popup__container">
         <h3 class="popup__title">Новое место</h3>
         <button class="popup__close" aria-label="Закрыть" id="close-newcard"></button>
-        <div name="newcard">
-          <form class="popup__form" name="card-form">
-            <input name="name" class="popup__input popup__input_type_title" type="text" placeholder="Название">
-            <input name="link" class="popup__input popup__input_type_image" type="url" placeholder="Ссылка на картинку">
-            <button class="popup__input-button" type="submit" aria-label="Создать">Создать</button>
-          </form>
-        </div>
+        <form class="popup__form" name="card-form">
+          <input name="name" class="popup__input popup__input_type_title" type="text" placeholder="Название">
+          <input name="link" class="popup__input popup__input_type_image" type="url" placeholder="Ссылка на картинку">
+          <button class="popup__input-button" type="submit" aria-label="Создать">Создать</button>
+        </form>
       </div>
     </div>
 
-  <div class="popup" id="slider">
+    <div class="popup" id="slider">
 
-    <div class="slider__container">
-      <figure class="slider__image">
-        <img class="slider__image-popup" src="#" alt="">
-        <button class="slider__close" aria-label="Закрыть"></button>
-        <figcaption class="slider__text"></figcaption>
-      </figure>
+      <div class="slider__container">
+        <figure class="slider__image">
+          <img class="slider__image-popup" src="#" alt="">
+          <button class="slider__close" aria-label="Закрыть"></button>
+          <figcaption class="slider__text"></figcaption>
+        </figure>
+      </div>
     </div>
-  </div>
 
-  <template id="template">
-    <li class="gallery__item-card">
-      <img class="gallery__item-image" src="#" alt="">
-      <button class="gallery__item-trash" type="button" aria-label="Удалить"></button>
-      <h2 class="gallery__item-title"></h2>
-      <button class="gallery__item-like" type="button" aria-label="Лайк"></button>
-    </li>
-  </template>
+    <template id="template">
+      <li class="gallery__item-card">
+        <img class="gallery__item-image" src="#" alt="">
+        <button class="gallery__item-trash" type="button" aria-label="Удалить"></button>
+        <h2 class="gallery__item-title"></h2>
+        <button class="gallery__item-like" type="button" aria-label="Лайк"></button>
+      </li>
+    </template>
 
   </div>
 
