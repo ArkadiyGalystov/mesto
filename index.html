@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Популярные места Росси и Европы">
+  <link rel="shortcut icon" href="images/avatar.png" type="image/x-icon">
+
+  <title>Mesto Russia</title>
+
+  <link rel="stylesheet" href="pages/index.css">
+
+</head>
+
+<body class="body">
+
+  <div class="page">
+
+    <header class="header">
+      <img class="header__logo" src="images/logo.svg" alt="Логотип">
+    </header>
+
+    <main class="main">
+
+      <section class="profile">
+        <div class="profile__block">
+          <img class="profile__avatar" src="images/avatar.png" alt="Жак-Ив Кусто">
+
+          <div class="profile__info">
+            <div class="profile__info-name">
+              <h1 class="profile__title">Жак-Ив Кусто</h1>
+              <button class="profile__edit" type="button" aria-label="Редактировать"></button>
+            </div>
+            <p class="profile__subtitle">Исследователь океана</p>
+          </div>
+        </div>
+        <button class="profile__add" type="button" value="add" aria-label="Добавить"></button>
+
+      </section>
+
+      <section class="gallery">
+        <ul class="gallery__item">
+
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">&copy; 2023 Mesto Russia</p>
+    </footer>
+
+    <div class="popup" id="profile">
+
+      <div class="popup__container">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <button class="popup__close" aria-label="Закрыть" id="close-profile"></button>
+        <form class="popup__form" name="profile-form">
+          <input name="name" class="popup__input popup__input_type_name" type="text" placeholder="Имя">
+          <input name="about" class="popup__input popup__input_type_about" type="text" placeholder="О себе">
+          <button class="popup__input-button" type="submit" aria-label="Сохранить">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="newcard">
+
+      <div class="popup__container">
+        <h3 class="popup__title">Новое место</h3>
+        <button class="popup__close" aria-label="Закрыть" id="close-newcard"></button>
+        <form class="popup__form" name="card-form">
+          <input name="name" class="popup__input popup__input_type_title" type="text" placeholder="Название">
+          <input name="link" class="popup__input popup__input_type_image" type="url" placeholder="Ссылка на картинку">
+          <button class="popup__input-button" type="submit" aria-label="Создать">Создать</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup" id="slider">
+
+      <div class="popup__slider-container">
+        <figure class="popup__slider-images">
+          <img class="popup__slider-image" src="#" alt="">
+          <button class="popup__close" aria-label="Закрыть" id="slider__close"></button>
+          <figcaption class="popup__slider-text"></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <template id="template">
+      <li class="gallery__item-card">
+        <img class="gallery__item-image" src="#" alt="">
+        <button class="gallery__item-trash" type="button" aria-label="Удалить"></button>
+        <h2 class="gallery__item-title"></h2>
+        <button class="gallery__item-like" type="button" aria-label="Лайк"></button>
+      </li>
+    </template>
+
+  </div>
+
+  <script defer src="script/cards.js"></script>
+  <script defer src="script/index.js"></script>
+</body>
+
+</html>
