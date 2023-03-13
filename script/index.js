@@ -27,7 +27,7 @@ const createItemCard = (cardData) => {
   galleryImage.alt = cardData.name;
   galleryTitle.textContent = cardData.name;
 
-  // закрытие по клику profile
+  // закрытие по клику slider
   sliderClose.addEventListener("click", function () {
     closePopup(slider);
   });
@@ -73,7 +73,8 @@ function resetButtonForm(form) {
   const buttonCreate = form.querySelector('.popup__input-button');
   if (buttonCreate.disabled === false) {
     buttonCreate.setAttribute('disabled', true);
-  }
+    buttonCreate.classList.add('popup__input-button_noactive');
+  };
 }
 
 //функция открытия popup`of
@@ -90,8 +91,6 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener('keydown', closePopupEsc);
   document.removeEventListener('click', closePopupNowindows);
-  popup.querySelector('.form').reset();
-  resetButtonForm(popup.querySelector('.form'));
 };
 
 // открытие по клику profile
@@ -130,6 +129,8 @@ const imageTitle = document.querySelector('.popup__input_type_image');
 // открытие по клику newcard
 openCard.addEventListener("click", function () {
   openPopup(newCard);
+  newCard.querySelector('.popup__form').reset();
+  resetButtonForm(newCard.querySelector('.popup__form'));
 });
 
 // закрытие по клику newcard
