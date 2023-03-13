@@ -142,9 +142,7 @@ function saveNewCard(evt) {
   createCardForm.reset();
 };
 
-newCard.addEventListener('submit', () => {
-  saveNewCard(newCard);
-});
+newCard.addEventListener('submit', saveNewCard);
 
 // закрытие popup на оверлей
 const closePopupNowindows = (evt) => {
