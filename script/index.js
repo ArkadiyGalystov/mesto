@@ -76,7 +76,7 @@ function openPopup(popup) {
   document.addEventListener('click', closePopupNowindows);
   inputName.value = profileTitle.textContent;
   inputSubname.value = profileSubtitle.textContent;
-  popup.querySelector('.popup__form').reset();
+  popup.querySelector('.popup__form').reset(); // не могу ни как сообразить сброс кнопки
 };
 
 //функция закрытия popup`of
