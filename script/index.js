@@ -10,18 +10,18 @@ const createItemCard = (cardData) => {
   const galleryTrash = galleryItem.querySelector('.gallery__item-trash'); // корзина удаления
   const galleryTitle = galleryItem.querySelector('.gallery__item-title'); // название
   const galleryLike = galleryItem.querySelector('.gallery__item-like'); // лайк
-  
-// slider
-const sliderImg = document.querySelector('.popup__slider-image');// картинка на весь экран
-const sliderText = document.querySelector('.popup__slider-text');// название под картинкой
-const sliderClose = document.querySelector('#slider__close');
 
-galleryImage.addEventListener("click", function () {
-  openPopup(slider);
-  sliderImg.src = cardData.link;
-  sliderImg.alt = cardData.name;
-  sliderText.textContent = cardData.name;
-});
+  // slider
+  const sliderImg = document.querySelector('.popup__slider-image');// картинка на весь экран
+  const sliderText = document.querySelector('.popup__slider-text');// название под картинкой
+  const sliderClose = document.querySelector('#slider__close');
+
+  galleryImage.addEventListener("click", function () {
+    openPopup(slider);
+    sliderImg.src = cardData.link;
+    sliderImg.alt = cardData.name;
+    sliderText.textContent = cardData.name;
+  });
 
   galleryImage.src = cardData.link;
   galleryImage.alt = cardData.name;
@@ -29,8 +29,8 @@ galleryImage.addEventListener("click", function () {
 
   // закрытие по клику profile
   sliderClose.addEventListener("click", function () {
-  closePopup(slider);
-});
+    closePopup(slider);
+  });
 
   // ставим и убираем лайк
   galleryLike.addEventListener('click', () => {
@@ -69,6 +69,13 @@ const closePopupProfile = document.querySelector('#close-profile');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputSubname = document.querySelector('.popup__input_type_about');
 
+function resetButtonForm(form) {
+  const buttonCreate = form.querySelector('.popup__input-button');
+  if (buttonCreate.disabled === false) {
+    buttonCreate.setAttribute('disabled', true);
+  }
+}
+
 //функция открытия popup`of
 function openPopup(popup) {
   popup.classList.add("popup_opened");
@@ -76,7 +83,6 @@ function openPopup(popup) {
   document.addEventListener('click', closePopupNowindows);
   inputName.value = profileTitle.textContent;
   inputSubname.value = profileSubtitle.textContent;
-  popup.querySelector('.popup__form').reset(); // не могу ни как сообразить сброс кнопки
 };
 
 //функция закрытия popup`of
@@ -84,6 +90,8 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener('keydown', closePopupEsc);
   document.removeEventListener('click', closePopupNowindows);
+  popup.querySelector('.form').reset();
+  resetButtonForm(popup.querySelector('.form'));
 };
 
 // открытие по клику profile
@@ -113,6 +121,7 @@ const newCard = document.querySelector('#newcard');
 const openCard = document.querySelector('.profile__add');
 const closePopupNewCard = document.querySelector('#close-newcard');
 const createCardForm = newCard.querySelector('.popup__form');
+const newForm = document.querySelector('#new-form')
 
 const buttonCreate = document.querySelector('.popup__input-button');
 const titleCard = document.querySelector('.popup__input_type_title');
