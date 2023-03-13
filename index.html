@@ -58,13 +58,16 @@
         <button class="popup__close" aria-label="Закрыть" id="close-profile"></button>
         <form action="#" class="form popup__form" name="profile-form" novalidate>
 
-          <input name="name" class="popup__input popup__input_type_name" id="user-input" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+          <input name="name" class="popup__input popup__input_type_name" id="user-input" type="text" placeholder="Имя"
+            minlength="2" maxlength="40" required>
           <span class="popup__form-error user-input-error"></span>
 
-          <input name="about" class="popup__input popup__input_type_about" id="about-input" type="text" placeholder="О себе" minlength="2" maxlength="200" required>
+          <input name="about" class="popup__input popup__input_type_about" id="about-input" type="text"
+            placeholder="О себе" minlength="2" maxlength="200" required>
           <span class="popup__form-error about-input-error"></span>
 
-          <button class="popup__input-button popup__input-button_noactive" type="submit" aria-label="Сохранить">Сохранить</button>
+          <button class="popup__input-button popup__input-button_noactive" type="submit"
+            aria-label="Сохранить">Сохранить</button>
         </form>
       </div>
     </div>
@@ -74,14 +77,17 @@
       <div class="popup__container">
         <h3 class="popup__title">Новое место</h3>
         <button class="popup__close" aria-label="Закрыть" id="close-newcard"></button>
-        <form action="#" class="form popup__form" name="card-form" novalidate>
-          <input name="name" class="popup__input popup__input_type_title" id="name-input" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+        <form action="#" class="form popup__form" name="card-form" id="new-form" novalidate>
+          <input name="name" class="popup__input popup__input_type_title" id="name-input" type="text"
+            placeholder="Название" minlength="2" maxlength="30" required>
           <span class="popup__form-error name-input-error"></span>
 
-          <input name="link" class="popup__input popup__input_type_image" id="link-input" type="url" placeholder="Ссылка на картинку" required>
+          <input name="link" class="popup__input popup__input_type_image" id="link-input" type="url"
+            placeholder="Ссылка на картинку" required>
           <span class="popup__form-error link-input-error"></span>
 
-          <button class="popup__input-button popup__input-button_noactive" type="submit" aria-label="Создать">Создать</button>
+          <button class="popup__input-button popup__input-button_noactive" type="submit" aria-label="Создать"
+            disabled>Создать</button>
         </form>
       </div>
     </div>
