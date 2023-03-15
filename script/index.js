@@ -60,6 +60,7 @@ initialCards.forEach((cardData) => {
 
 
 // Profile
+const forms = document.querySelector('.form');
 const popupForm = document.querySelector('#profile');
 const openProfile = document.querySelector('.profile__edit');
 const profileTitle = document.querySelector('.profile__title');
@@ -69,6 +70,9 @@ const closePopupProfile = document.querySelector('#close-profile');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputSubname = document.querySelector('.popup__input_type_about');
 
+// не понимаю кто из вас прав, но долго не получалось убирать сброс кнопок.
+// почитав чат и увидел студентов, у которых тоже такие проблемы.
+// наставники советовали делать похожую схему. очищать форму и кнопку именно в этом файле.
 function resetButtonForm(form) {
   const buttonCreate = form.querySelector('.popup__input-button');
   if (buttonCreate.disabled === false) {
@@ -81,17 +85,16 @@ function resetButtonForm(form) {
 function openPopup(popup) {
   popup.classList.add("popup_opened");
   document.addEventListener('keydown', closePopupEsc);
-  document.addEventListener('click', closePopupNowindows);
-  inputName.value = profileTitle.textContent;
-  inputSubname.value = profileSubtitle.textContent;
 };
 
 //функция закрытия popup`of
 function closePopup(popup) {
   popup.classList.remove("popup_opened");
   document.removeEventListener('keydown', closePopupEsc);
-  document.removeEventListener('click', closePopupNowindows);
 };
+
+  inputName.value = profileTitle.textContent;
+  inputSubname.value = profileSubtitle.textContent;
 
 // открытие по клику profile
 openProfile.addEventListener("click", function () {
@@ -111,7 +114,7 @@ function saveProfileForm(evt) {
   closePopup(popupForm);
 };
 // сохранения profile
-popupForm.addEventListener('submit', saveProfileForm);
+forms.addEventListener('submit', saveProfileForm);
 // ----------------------------------------------------
 
 
@@ -152,14 +155,18 @@ function saveNewCard(evt) {
   createCardForm.reset();
 };
 
-newCard.addEventListener('submit', saveNewCard);
+createCardForm.addEventListener('submit', saveNewCard);
 
 // закрытие popup на оверлей
-const closePopupNowindows = (evt) => {
-  if (evt.target.classList.contains('popup_opened')) {
-    closePopup(evt.target);
-  };
-};
+const popupList = Array.from(document.querySelectorAll('.popup')); // найдем все попапы на странице
+popupList.forEach((popup) => { // итерируем массив. объявляя каждый попап в переменную popup
+  popup.addEventListener('mouseup', (event) => { // на каждый попап устанавливаем слушателя события
+    const targetClassList = event.target.classList; // запишем в переменную класс элемента, на котором произошло событие
+    if (targetClassList.contains('popup') || targetClassList.contains('popup__close')) { // проверяем наличие класса попапа ИЛИ кнопки закрытия
+      closePopup(popup); // если один из классов присутствует, то закрываем попап
+    }
+  })
+});
 
 const closePopupEsc = (evt) => {
   if (evt.key === 'Escape') {
