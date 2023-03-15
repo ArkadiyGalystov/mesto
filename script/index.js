@@ -93,8 +93,8 @@ function closePopup(popup) {
   document.removeEventListener('keydown', closePopupEsc);
 };
 
-  inputName.value = profileTitle.textContent;
-  inputSubname.value = profileSubtitle.textContent;
+inputName.value = profileTitle.textContent;
+inputSubname.value = profileSubtitle.textContent;
 
 // открытие по клику profile
 openProfile.addEventListener("click", function () {
