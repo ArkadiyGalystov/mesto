@@ -45,3 +45,5 @@
 @import url(../blocks/popup/__slider-image/popup__slider-image.css);
 @import url(../blocks/popup/__slider-text/popup__slider-text.css);
 @import url(../blocks/popup/_open/slider_open.css);
+
+@import url(../blocks/popup-image/popup-image.css);
