@@ -70,16 +70,6 @@ const closePopupProfile = document.querySelector('#close-profile');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputSubname = document.querySelector('.popup__input_type_about');
 
-// не понимаю кто из вас прав, но долго не получалось убирать сброс кнопок.
-// почитав чат и увидел студентов, у которых тоже такие проблемы.
-// наставники советовали делать похожую схему. очищать форму и кнопку именно в этом файле.
-function resetButtonForm(form) {
-  const buttonCreate = form.querySelector('.popup__input-button');
-  if (buttonCreate.disabled === false) {
-    buttonCreate.setAttribute('disabled', true);
-    buttonCreate.classList.add('popup__input-button_noactive');
-  };
-}
 
 //функция открытия popup`of
 function openPopup(popup) {
@@ -132,8 +122,6 @@ const imageTitle = document.querySelector('.popup__input_type_image');
 // открытие по клику newcard
 openCard.addEventListener("click", function () {
   openPopup(newCard);
-  newCard.querySelector('.popup__form').reset();
-  resetButtonForm(newCard.querySelector('.popup__form'));
 });
 
 // закрытие по клику newcard
