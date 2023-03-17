@@ -75,9 +75,7 @@ const isValid = (validForm, formElement, inputElement) => {
 
 // добавляем обработчик для всех полей формы
 const setEventListeners = (validForm, formElement) => {
-  const inputList = Array.from(
-    formElement.querySelectorAll(validForm.inputSelector)
-  );
+  const inputList = Array.from(formElement.querySelectorAll(validForm.inputSelector));
   const buttonElement = formElement.querySelector(validForm.submitButtonSelector);
   setButtonActive(validForm, inputList, buttonElement);
 
@@ -87,7 +85,12 @@ const setEventListeners = (validForm, formElement) => {
       setButtonActive(validForm, inputList, buttonElement);
     });
   });
+
+  formElement.addEventListener('submit', () => {
+    disabledSubmitBtm(validForm, buttonElement);
+  })
 };
+
 
 // перебераем все формы на странице
 const enableValidation = (validForm) => {
