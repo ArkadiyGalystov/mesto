@@ -122,6 +122,7 @@ const imageTitle = document.querySelector('.popup__input_type_image');
 // открытие по клику newcard
 openCard.addEventListener("click", function () {
   openPopup(newCard);
+  newCard.querySelector('.popup__form').reset();
 });
 
 // закрытие по клику newcard
