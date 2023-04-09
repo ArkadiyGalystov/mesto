@@ -8,12 +8,12 @@ class FormValidator {
     this._formElement = formElement;
   }
 
-  /** валидация форм */
+  // валидация форм
   enableValidation() {
     this._setEventListeners();
   }
 
-  /** функция, которая добавляет класс с ошибкой */
+  // функция, которая добавляет класс с ошибкой
   _showInputError() {
     const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-error`); // находим элемент ошибки внутри самой функции
     this._inputElement.classList.add(this._inputErrorClass);
@@ -21,7 +21,7 @@ class FormValidator {
     errorElement.classList.add(this._errorClass); // замена содержимого span с ошибкой на переданный параметр
   }
 
-  /** функция, которая удаляет класс с ошибкой */
+  // функция, которая удаляет класс с ошибкой
   _hideInputError() {
     const errorElement = this._formElement.querySelector(`.${this._inputElement.id}-error`); // находим элемент ошибки
     this._inputElement.classList.remove(this._inputErrorClass);
@@ -29,7 +29,7 @@ class FormValidator {
     errorElement.textContent = ''; // cкрываем сообщение об ошибке
   }
 
-  /** функция, которая проверяет валидность поля. Принимает inputElement */
+  // функция, которая проверяет валидность поля. Принимает inputElement
   _isValid(inputElement) {
     if (!this._inputElement.validity.valid) {
       this._showInputError(inputElement);
@@ -38,7 +38,7 @@ class FormValidator {
     }
   }
 
-  /** функция, которая проверяет валидность полей и отключает или включает кнопку отправки */
+  // функция, которая проверяет валидность полей и отключает или включает кнопку отправки
   _disabledSubmitBtm() {
     const isFormValid = this._formElement.checkValidity();
     this._buttonElement.disabled = !isFormValid;
@@ -49,6 +49,7 @@ class FormValidator {
   }
 
   _setEventListeners() {
+    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector); // кнопка
     this._inputList = this._formElement.querySelectorAll(this._formSelector);
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener('input', () => {
@@ -57,8 +58,6 @@ class FormValidator {
         this._disabledSubmitBtm();
       });
     });
-
-    this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
   }
 
   disabledSubmit() {
