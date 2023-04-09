@@ -36,12 +36,12 @@ class Card {
   }
 
   // ставим и убираем лайк
-  _like() {
+  _toggleLike() {
     this._elementLike.classList.toggle('gallery__item-like_active');
   }
 
   // удаление карточки
-  _trash() {
+  _deleteCard() {
     this._element.remove();
     this._element = null;
   }
@@ -52,8 +52,8 @@ class Card {
       this._viewPopupImage(this._name, this._link);
     });
 
-    this._elementLike.addEventListener("click", () => this._like());
-    this._elementTrash.addEventListener("click", () => this._trash());
+    this._elementLike.addEventListener("click", () => this._toggleLike());
+    this._elementTrash.addEventListener("click", () => this._deleteCard());
   }
 }
 
