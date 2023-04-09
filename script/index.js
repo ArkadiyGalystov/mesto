@@ -30,76 +30,56 @@ popupList.forEach((popup) => { // итерируем массив. объявл�
 // закрытие popup по клавише esc
 const closePopupEsc = (evt) => {
   if (evt.key === 'Escape') {
-    const popupAll = document.querySelector(".popup_opened");
-    closePopup(popupAll);
+    const openedPopup = document.querySelector(".popup_opened");
+    closePopup(openedPopup);
   };
 };
-
-function resetButtonForm(form) {
-  const buttonCreate = form.querySelector('.popup__input-button');
-  if (buttonCreate.disabled === false) {
-    buttonCreate.setAttribute('disabled', true);
-    buttonCreate.classList.add('popup__input-button_noactive');
-  };
-}
 
 // ---------------------------------------------------------
 
 // редактирование блока Profile
-const forms = document.querySelector('.form');
-const popupForm = document.querySelector('#profile');
+const profileForm = document.forms["profile-form"]; // получаем форму по уникальному атрибуту из тега form
+const profilePopup = document.querySelector('#profile');
 const openProfile = document.querySelector('.profile__edit');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const inputName = document.querySelector('.popup__input_type_name');
 const inputSubname = document.querySelector('.popup__input_type_about');
-const closePopupProfile = document.querySelector('#close-profile');
 
 // открытие по клику profile
 openProfile.addEventListener("click", function () {
-  openPopup(popupForm);
+  openPopup(profilePopup);
+  validProfileForm.disabledSubmit(); // сброс кнопки Profile из FormValidator
 });
 
 inputName.value = profileTitle.textContent;
 inputSubname.value = profileSubtitle.textContent;
-
-// закрытие по клику profile
-closePopupProfile.addEventListener("click", function () {
-  closePopup(popupForm);
-});
 
 // сохрание содержимого Profile
 function saveProfileForm(evt) {
   evt.preventDefault();
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputSubname.value;
-  closePopup(popupForm);
+  closePopup(profilePopup);
 };
 
 // сохранение формы profile
-forms.addEventListener('submit', saveProfileForm);
+profileForm.addEventListener('submit', saveProfileForm);
 
 // ---------------------------------------------------------
 
 // добавление новых карточек NewCard
 const newCard = document.querySelector('#newcard');
 const openCard = document.querySelector('.profile__add');
-const closePopupNewCard = document.querySelector('#close-newcard');
-const createCardForm = newCard.querySelector('.popup__form');
+const cardForm = document.forms["card-form"]; // получаем форму по уникальному атрибуту из тега form
 const titleCard = document.querySelector('.popup__input_type_title');
 const imageTitle = document.querySelector('.popup__input_type_image');
 
 // открытие по клику newcard
 openCard.addEventListener("click", function () {
   openPopup(newCard);
-  newCard.querySelector('.popup__form').reset();
-  resetButtonForm(newCard.querySelector('.popup__form'));
-
-});
-
-// закрытие по клику newcard
-closePopupNewCard.addEventListener("click", function () {
-  closePopup(newCard);
+  cardForm.reset(); // сброс формы без отправки при закрытии
+  validNewCardForm.disabledSubmit(); // сброс кнопки NewCard из FormValidator
 });
 
 // добавление карточки на сайт и закрытие popup (сброс)
@@ -115,7 +95,7 @@ function saveNewCard(evt) {
   closePopup(newCard);
 }
 
-createCardForm.addEventListener('submit', saveNewCard);
+cardForm.addEventListener('submit', saveNewCard);
 
 // ---------------------------------------------------------
 
@@ -125,7 +105,7 @@ const sliderText = document.querySelector('.popup__slider-text');// назван
 
 function sliderImages(name, link) {
   sliderImg.src = link;
-  sliderText.alt = name;
+  sliderImg.alt = name;
   sliderText.textContent = name;
 
   openPopup(slider);
@@ -153,8 +133,8 @@ function createCard(data) {
 
 
 // валидация форм
-const validProfileForm = new FormValidator(validForm, forms);
+const validProfileForm = new FormValidator(validForm, profileForm);
 validProfileForm.enableValidation();
 
-const validNewCardForm = new FormValidator(validForm, createCardForm);
+const validNewCardForm = new FormValidator(validForm, cardForm);
 validNewCardForm.enableValidation();
