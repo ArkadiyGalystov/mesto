@@ -20,7 +20,7 @@ import {
 } from './utils/constants.js';
 
 // класс UserInfo, который отвечает за управление отображением информации о пользователе на странице
-const user = new UserInfo({ nameSelector: '.profile__title', jobSelector: '.profile__subtitle'});
+const user = new UserInfo({ nameSelector: '.profile__title', subtitleSelector: '.profile__subtitle'});
 //-------------------------------------------------------------------------------------------------
 
 // класс Section, который отвечает за отрисовку элементов на странице
