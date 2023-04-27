@@ -8,21 +8,12 @@ class Popup {
   open() {
     this._popup.classList.add('popup_opened');
     document.addEventListener('keydown', this._handleEscClose);
-    document.addEventListener('click', this._handleOverlayClose);
   }
 
   // публичные методы, которые отвечают за закрытие попапа
   close() {
     this._popup.classList.remove('popup_opened');
     document.removeEventListener('keydown', this._handleEscClose);
-    document.addEventListener('click', this._handleOverlayClose);
-  };
-
-  _handleOverlayClose = (evt) => {
-    //метод содержит логику закрытия попап нажатием на оверлей
-    if (evt.target.classList.contains('popup_opened')) {
-      this.close(this._popup);
-    }
   };
 
   // публичные методы, которые отвечают за закрытие попапа клавишей Esc
