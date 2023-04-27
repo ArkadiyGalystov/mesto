@@ -14,9 +14,9 @@ class UserInfo {
   }
 
   // публичный метод setUserInfo, который принимает новые данные пользователя и добавляет их на страницу
-  setUserInfo({ name, subtitle }) {
+  setUserInfo({ name, about }) {
     this._profileTitle.textContent = name;
-    this._profileSubtitle.textContent = subtitle;
+    this._profileSubtitle.textContent = about;
   }
 }
 
