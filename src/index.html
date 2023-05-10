@@ -59,7 +59,7 @@
                             <input type="text" name="name" id="cardname-input" class="form__item form__item_image_name" placeholder="Название" minlength="2" maxlength="30" required>
                             <span class="form__item-error cardname-input-error"></span>
                             
-                            <input type="url" name="link" id="link-input" class="form__item form__item_image_link" placeholder="Ссылка на картинку" required>
+                            <input type="url" name="link" id="link-newcard" class="form__item form__item_image_link" placeholder="Ссылка на картинку" required>
                             <span class="form__item-error link-input-error"></span>
                         </fieldset>   
                     <button class="form__submit-button" type="submit" aria-label="Создать" disabled>Создать</button>
@@ -93,7 +93,7 @@
                     <button class="popup__close" type="button" aria-label="Закрыть"></button>
                     <h2 class="form__name">Обновить аватар</h2>
                         <fieldset class="form__input-container">
-                            <input type="url" name="link" id="link-input" class="form__item form__item_avatar_link" placeholder="Ссылка на картинку" required>
+                            <input type="url" name="link" id="link-avatar" class="form__item form__item_avatar_link" placeholder="Ссылка на картинку" required>
                             <span class="form__item-error link-input-error"></span>
                         </fieldset>   
                     <button class="form__submit-button" type="submit" aria-label="Сохранить" disabled>Сохраниьт</button>
@@ -102,7 +102,6 @@
         </div>
     </div>
          
-    </div>
     
         <template id="card__template">
             <article class="card">
