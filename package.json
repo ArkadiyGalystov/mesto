@@ -11,7 +11,7 @@
   },
   "author": "Arkadiy",
   "license": "ISC",
-  "homepage": "https://arkadiygalystov.github.io/mesto/",
+  "homepage": "https://github.com/ArkadiyGalystov/mesto.git",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
