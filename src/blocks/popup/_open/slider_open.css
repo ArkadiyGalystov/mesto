@@ -1,8 +1,0 @@
-.slider_open {
-  display: flex;
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.4s linear;
-  background: rgba(0, 0, 0, 0.9);
-  cursor: pointer;
-}
