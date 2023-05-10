@@ -7,11 +7,11 @@
     "build": "webpack --mode production",
     "dev": "webpack serve",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "author": "Arkadiy",
   "license": "ISC",
-  "homepage": "https://arkadiygalystov.github.io/mesto/index.html",
+  "homepage": "https://arkadiygalystov.github.io/mesto/",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
