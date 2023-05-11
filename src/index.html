@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+</head>
+<body class="root">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Логотип">
+        </header>      
+       
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="https://w-dog.ru/wallpapers/6/1/433971916700597/leopard-pantery-pardus-lapa-mordochka-pyatnistyj-usy-vzglyad-fotoshop-oboi.jpg" alt="Аватар пользователя">
+                <button type="button" class="profile__avatar-edit" aria-label="Fватара пользователя"></button>
+                <div class="profile__info">
+                    <h1 class="profile__name">Жак-Ив Кусто</h1>
+                    <button class="profile__edit-button" type="button" aria-label="Кнопка редактирования профиля"></button>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                <button class="profile__add-button" type="button" aria-label="Кнопка добавления фотографии"></button>
+            </section>
+            
+            <section class="cards" aria-label="Карточки сайта">
+
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
+        </footer>
+       
+        <div class="popup popup-profile">
+            <div class="popup__container">
+                <form class="form form-profile" name="popup-form" novalidate>
+                    <button class="popup__close" type="button" aria-label="Закрыть"></button>
+                    <h2 class="form__name">Редактировать профиль</h2>
+                        <fieldset class="form__input-container">
+                            <input type="text" name="name" id="username-input" class="form__item form__item_user_name" placeholder="Имя" minlength="2" maxlength="40" required>
+                            <span class="form__item-error username-input-error"></span>
+                            
+                            <input type="text" name="about" id="subtitle-input" class="form__item form__item_user_subtitle" placeholder="О себе" minlength="2" maxlength="200" required>
+                            <span class="form__item-error subtitle-input-error"></span>
+                        </fieldset>   
+                    <button class="form__submit-button" type="submit" aria-label="Сохранить" disabled>Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup-newcard">
+            <div class="popup__container">
+                <form class="form form-cards" name="popup-form" novalidate>
+                    <button class="popup__close" type="button" aria-label="Закрыть"></button>
+                    <h2 class="form__name">Новое место</h2>
+                        <fieldset class="form__input-container">
+                            <input type="text" name="name" id="cardname-input" class="form__item form__item_image_name" placeholder="Название" minlength="2" maxlength="30" required>
+                            <span class="form__item-error cardname-input-error"></span>
+                            
+                            <input type="url" name="link" id="link-input" class="form__item form__item_image_link" placeholder="Ссылка на картинку" required>
+                            <span class="form__item-error link-input-error"></span>
+                        </fieldset>   
+                    <button class="form__submit-button" type="submit" aria-label="Создать" disabled>Создать</button>
+                </form>
+            </div>
+        </div> 
+
+        <div class="popup popup-image">
+            <div class="popup-image__container">
+                <button type="button" class="popup__close" aria-label="Закрыть"></button>
+                <figure class="figure">
+                    <img class="popup-image__pic" src="#" alt="#">
+                    <figcaption class="popup-image__title"></figcaption>
+                </figure>
+            </div>
+        </div>
+
+        <div class="popup popup-avatar">
+            <div class="popup__container">
+                <form class="form form-avatar" name="popup-form" novalidate>
+                    <button class="popup__close" type="button" aria-label="Закрыть"></button>
+                    <h2 class="form__name">Обновить аватар</h2>
+                        <fieldset class="form__input-container">
+                            <input type="url" name="link" id="link-input" class="form__item form__item_avatar_link" placeholder="Ссылка на картинку" required>
+                            <span class="form__item-error link-input-error"></span>
+                        </fieldset>   
+                    <button class="form__submit-button" type="submit" aria-label="Сохранить" disabled>Сохранить</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="popup popup-delete">
+            <div class="popup__container">
+                <form class="form form-delete" name="popup-form" novalidate>
+                    <button class="popup__close" type="button" aria-label="Закрыть"></button>
+                    <h2 class="form__name">Вы уверены?</h2>
+                    <button class="form__submit-button form__submit-button_delete" type="submit" aria-label="Удаления карточки">Да</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+        <template id="card__template">
+            <article class="card">
+                <div class="card__image">
+                    <img class="card__pic" src="#" alt="#">
+                    <button class="card__trash" type="button" aria-label="Удалить"></button>
+                </div>
+                <div class="card__description">
+                    <h2 class="card__name"></h2>
+                    <div class="card__like-container">
+                        <button class="card__like" type="button" aria-label="Лайк"></button>
+                        <span class="card__like-number"></span>
+                </div>
+            </div>
+            </article>
+        </template>
+
+</body>
+</html>
