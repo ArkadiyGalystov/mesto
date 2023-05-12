@@ -9,9 +9,13 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArkadiyGalystov/mesto.git"
+  },
   "author": "Arkadiy",
   "license": "ISC",
-  "homepage": "https://github.com/ArkadiyGalystov/mesto.git",
+  "homepage": "https://arkadiygalystov.github.io/mesto/",
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
